@@ -79,7 +79,7 @@
 .workshop-cta {
     height: 60vh; 
     width: 100%;
-    background: url('images/workshop-bg.jpg') no-repeat center center/cover;
+    background: url('workshop-bg.jpg') no-repeat center center/cover;
     position: relative; 
     display: flex; 
     align-items: center; 
@@ -153,4 +153,5 @@
     .intro-grid { grid-template-columns: 1fr; } 
     .intro-img { height: 300px; }
     .session-grid { grid-template-columns: repeat(2, 1fr); } 
+
 }

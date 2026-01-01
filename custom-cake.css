@@ -1,0 +1,315 @@
+/* Custom Cake Builder Styles */
+
+.builder-section {
+    padding: 60px 0 100px;
+    background-color: var(--cream-bg);
+}
+
+.builder-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+/* --- Left: Controls --- */
+.builder-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 20%;
+    background: var(--gold-gradient);
+    transition: width 0.4s ease;
+}
+
+.step-indicator {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Step Cards */
+.step-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: none; /* Hidden by default */
+    animation: slideIn 0.4s ease;
+}
+
+.step-card.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-card h3 {
+    color: var(--primary-brown);
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.step-desc {
+    color: #888;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Options Grid */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.options-grid.small {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.option-card, .option-pill {
+    cursor: pointer;
+    position: relative;
+}
+
+/* Hide Radio/Check */
+.option-card input, .option-pill input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Visual Style for Options */
+.option-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.option-visual {
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.shape-round { border-radius: 50%; }
+.shape-heart { color: #e74c3c; font-size: 2rem; background: transparent; }
+
+.option-card span { font-weight: bold; color: #555; }
+
+/* Checked State */
+.option-card input:checked + .option-visual {
+    background: var(--gold);
+    color: white;
+}
+.option-card input:checked ~ span { color: var(--gold); }
+.option-card:has(input:checked) {
+    border-color: var(--gold);
+    box-shadow: 0 5px 15px rgba(191, 160, 86, 0.2);
+}
+
+/* Pill Style Options */
+.option-pill span {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #555;
+    transition: 0.3s;
+}
+
+.option-pill input:checked + span {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 4px 10px rgba(191, 160, 86, 0.3);
+}
+
+/* Inputs & Selects */
+.input-group { margin-bottom: 20px; }
+.label-title { display: block; font-weight: bold; margin-bottom: 8px; color: var(--primary-brown); }
+select, input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    outline: none;
+}
+select:focus, input:focus, textarea:focus { border-color: var(--gold); }
+
+/* Color Picker */
+.color-picker { display: flex; gap: 10px; flex-wrap: wrap; }
+.color-picker label { cursor: pointer; }
+.color-picker input { display: none; }
+.color-picker span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.color-picker input:checked + span {
+    transform: scale(1.2);
+    border: 2px solid var(--gold) !important;
+}
+
+/* Buttons */
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.next-btn { width: 100%; margin-top: 20px; }
+
+/* --- Right: Preview Panel --- */
+.builder-preview {
+    position: relative;
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 120px; /* Below navbar */
+}
+
+.preview-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-top: 5px solid var(--gold);
+    text-align: center;
+}
+
+.preview-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-brown);
+}
+
+/* Live Visual Cake (CSS Art) */
+.cake-visual-container {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: #fdfdfd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-cake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.cake-tier {
+    width: 140px;
+    height: 80px;
+    background-color: #fcfbf8; /* Default color */
+    border-radius: 10px 10px 5px 5px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: inset -10px 0 20px rgba(0,0,0,0.05);
+    position: relative;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tier-2 {
+    width: 100px;
+    height: 60px;
+    margin-bottom: -5px; /* Stack */
+    z-index: 2;
+}
+
+.cake-msg {
+    font-family: 'Playfair Display', serif; /* Cursive look */
+    font-size: 0.8rem;
+    color: var(--primary-brown);
+    text-align: center;
+    padding: 5px;
+    pointer-events: none;
+    font-style: italic;
+}
+
+/* Summary List */
+.summary-details {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-brown);
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #25d366; /* WhatsApp Green */
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+.checkout-btn:hover { background: #1ebe57; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .builder-layout { grid-template-columns: 1fr; }
+    .sticky-wrapper { position: static; }
+    .options-grid { grid-template-columns: repeat(2, 1fr); }
+    .cake-visual-container { height: 150px; }
+}

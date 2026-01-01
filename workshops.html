@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops | Novelty By Khadija Iqbal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="workshops.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-group nav-left">
+            <div class="nav-links-desktop">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="menu.html">Menu</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+        </div>
+
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="Novelty-logo.png" alt="Novelty Logo">
+            </a>
+        </div>
+
+        <div class="nav-group nav-right">
+            <div class="nav-links-desktop">
+                <a href="custom-cake.html">Custom Baking</a>
+                <a href="workshops.html" class="active">Workshops</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="nav-icons">
+                <button class="icon-btn" onclick="openSearch()" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <a href="cart.html" class="icon-btn" title="View Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-count-badge" class="cart-count" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="custom-cake.html">Custom Baking</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+    </nav>
+
+    <div id="search-overlay" class="search-overlay">
+        <button class="close-search" onclick="closeSearch()">×</button>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search for cakes, brownies..." onkeypress="handleSearch(event)">
+            <p style="color: #bfa056; margin-top: 10px;">Press Enter to Search</p>
+        </div>
+    </div>
+
+    <header class="page-hero" style="background-image: url('menu-hero.jpg');">
+        <div class="page-hero-content">
+            <h1>Workshops</h1>
+            <div class="divider-gold"></div>
+            <p class="breadcrumb"><a href="index.html">Home</a> / Workshops</p>
+        </div>
+    </header>
+
+    <section class="workshop-intro">
+        <div class="intro-grid">
+            <img src="certificate.jpg" class="intro-img" alt="Kid with Certificate">
+            <div class="intro-text">
+                <h2 class="section-title" style="font-size: 2rem;">Learn the Art of <span class="text-gold">Baking</span></h2>
+                <div class="divider-gold-small" style="margin: 15px auto;"></div>
+                <p>
+                    The bakery also offers creative baking workshops designed especially for children, providing engaging and hands-on baking sessions in a fun and safe environment. 
+                    <br><br>
+                    These workshops encourage creativity while teaching basic baking skills under professional guidance. Upon completion, participants are awarded certificates, making the experience both educational and rewarding.
+                </p>
+            </div>
+            <img src="kidfrosting.jpg" class="intro-img" alt="Kid Frosting Cake">
+        </div>
+    </section>
+
+    <section class="kids-session-section">
+        <h2 class="kids-heading">Kids Session</h2>
+        <div class="session-grid">
+            <div class="session-item"><img src="kidbaking.jpg" class="session-img" alt="Kid Baking"></div>
+            <div class="session-item"><img src="kidbaking2.jpg" class="session-img" alt="Kid Baking"></div>
+            <div class="session-item"><img src="kidbaking3.jpg" class="session-img" alt="Kid Baking"></div>
+            <div class="session-item"><img src="kidbaking4.jpg" class="session-img" alt="Kid Baking"></div>
+        </div>
+    </section>
+
+    <section class="workshop-cta">
+        <div class="cta-box">
+            <span>For Workshop Queries</span>
+            <a href="https://wa.me/923216222247" target="_blank" class="cta-whatsapp-link">
+                <h2>Contact Us</h2>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html">
+                    <img src="Novelty-logo.png" alt="Novelty Logo" class="footer-logo">
+                </a>
+                <p class="mt-20">Where tradition meets modern artistry.</p>
+                <div class="social-icons mt-20">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>📍 25-B1, Gulberg 3, Ghalib Market, Lahore</p>
+                <p>📞 +92 321 622 2247</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Novelty By Khadija Iqbal.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923216222247" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat">
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

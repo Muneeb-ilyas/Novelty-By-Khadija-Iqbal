@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Own Cake | Novelty By Khadija Iqbal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="custom-cake.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-group nav-left">
+            <div class="nav-links-desktop">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="menu.html">Menu</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+        </div>
+        <div class="logo-container">
+            <a href="index.html"><img src="Novelty-logo.png" alt="Novelty Logo"></a>
+        </div>
+        <div class="nav-group nav-right">
+            <div class="nav-links-desktop">
+                <a href="custom-cake.html" class="active">Custom Baking</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <button class="icon-btn" onclick="openSearch()"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+                <a href="cart.html" class="icon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-count-badge" class="cart-count" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="custom-cake.html">Custom Baking</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+    </nav>
+
+    <header class="page-hero" style="background-image: url('menu-hero.jpg');">
+        <div class="page-hero-content">
+            <h1>Design Your Cake</h1>
+            <div class="divider-gold"></div>
+            <p class="breadcrumb"><a href="index.html">Home</a> / Custom Builder</p>
+        </div>
+    </header>
+
+    <section class="builder-section">
+        <div class="container builder-layout">
+            
+            <div class="builder-controls">
+                
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="step-indicator">Step <span id="currentStepNum">1</span> of 5</div>
+
+                <div class="step-card active" id="step1">
+                    <h3>1. Choose Base & Size</h3>
+                    <p class="step-desc">Pick the foundation for your masterpiece.</p>
+                    
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="shape" value="Round" checked onchange="updateCake()">
+                            <div class="option-visual shape-round"></div>
+                            <span>Round</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="shape" value="Square" onchange="updateCake()">
+                            <div class="option-visual shape-square"></div>
+                            <span>Square</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="shape" value="Heart" onchange="updateCake()">
+                            <div class="option-visual shape-heart">♥</div>
+                            <span>Heart</span>
+                        </label>
+                    </div>
+
+                    <div class="input-group mt-20">
+                        <label class="label-title">Select Weight</label>
+                        <select id="cakeSize" onchange="updateCake()">
+                            <option value="1" data-price="1500">1 Pound (Rs 1500)</option>
+                            <option value="2" data-price="2800">2 Pounds (Rs 2800)</option>
+                            <option value="3" data-price="4000">3 Pounds (Rs 4000)</option>
+                            <option value="4" data-price="5500">2 Tier Special (Rs 5500)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary next-btn" onclick="nextStep(2)">Next: Flavors →</button>
+                </div>
+
+                <div class="step-card" id="step2">
+                    <h3>2. Flavor Profile</h3>
+                    <p class="step-desc">What should it taste like inside?</p>
+
+                    <div class="input-group">
+                        <label class="label-title">Sponge Flavor</label>
+                        <div class="options-grid small">
+                            <label class="option-pill">
+                                <input type="radio" name="flavor" value="Vanilla" checked onchange="updateCake()">
+                                <span>Vanilla</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="flavor" value="Chocolate" onchange="updateCake()">
+                                <span>Chocolate</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="flavor" value="Red Velvet" onchange="updateCake()">
+                                <span>Red Velvet</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="flavor" value="Lotus" onchange="updateCake()">
+                                <span>Lotus</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-group mt-20">
+                        <label class="label-title">Filling Type</label>
+                        <select id="filling" onchange="updateCake()">
+                            <option value="Cream">Classic Cream</option>
+                            <option value="Ganache">Chocolate Ganache (+Rs 200)</option>
+                            <option value="Fruit">Fresh Fruit (+Rs 300)</option>
+                            <option value="Lotus">Lotus Spread (+Rs 400)</option>
+                        </select>
+                    </div>
+
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="nextStep(1)">← Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">Next: Style →</button>
+                    </div>
+                </div>
+
+                <div class="step-card" id="step3">
+                    <h3>3. Style & Color</h3>
+                    <p class="step-desc">Make it look pretty!</p>
+
+                    <div class="input-group">
+                        <label class="label-title">Frosting Type</label>
+                        <div class="options-grid small">
+                            <label class="option-pill">
+                                <input type="radio" name="frosting" value="Buttercream" checked onchange="updateCake()">
+                                <span>Buttercream</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="frosting" value="Fresh Cream" onchange="updateCake()">
+                                <span>Fresh Cream</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="frosting" value="Fondant" onchange="updateCake()">
+                                <span>Fondant (+Rs 500)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-group mt-20">
+                        <label class="label-title">Choose Theme Color</label>
+                        <div class="color-picker">
+                            <label><input type="radio" name="color" value="#fcfbf8" checked onchange="updateCake()"><span style="background:#fcfbf8; border:1px solid #ddd;"></span></label>
+                            <label><input type="radio" name="color" value="#f8d7da" onchange="updateCake()"><span style="background:#f8d7da;"></span></label>
+                            <label><input type="radio" name="color" value="#d1ecf1" onchange="updateCake()"><span style="background:#d1ecf1;"></span></label>
+                            <label><input type="radio" name="color" value="#d4edda" onchange="updateCake()"><span style="background:#d4edda;"></span></label>
+                            <label><input type="radio" name="color" value="#fff3cd" onchange="updateCake()"><span style="background:#fff3cd;"></span></label>
+                            <label><input type="radio" name="color" value="#e2d9f3" onchange="updateCake()"><span style="background:#e2d9f3;"></span></label>
+                            <label><input type="radio" name="color" value="#3b231f" onchange="updateCake()"><span style="background:#3b231f;"></span></label>
+                        </div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="nextStep(2)">← Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(4)">Next: Toppings →</button>
+                    </div>
+                </div>
+
+                <div class="step-card" id="step4">
+                    <h3>4. The Final Touch</h3>
+                    <p class="step-desc">Add some magic on top.</p>
+
+                    <div class="input-group">
+                        <label class="label-title">Toppings (Select Multiple)</label>
+                        <div class="options-grid small multi-select">
+                            <label class="option-pill">
+                                <input type="checkbox" value="Sprinkles" onchange="updateCake()">
+                                <span>Sprinkles</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="checkbox" value="Chocolates" onchange="updateCake()">
+                                <span>Chocolates</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="checkbox" value="Flowers" onchange="updateCake()">
+                                <span>Flowers</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="checkbox" value="Macarons" onchange="updateCake()">
+                                <span>Macarons</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="checkbox" value="Gold Leaf" onchange="updateCake()">
+                                <span>Gold Leaf</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-group mt-20">
+                        <label class="label-title">Occasion</label>
+                        <select id="occasion" onchange="updateCake()">
+                            <option value="General">Just Cravings</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Graduation">Graduation</option>
+                        </select>
+                    </div>
+
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="nextStep(3)">← Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(5)">Next: Message →</button>
+                    </div>
+                </div>
+
+                <div class="step-card" id="step5">
+                    <h3>5. Personalize It</h3>
+                    <p class="step-desc">What should the cake say?</p>
+
+                    <div class="input-group">
+                        <label class="label-title">Cake Message (Max 25 chars)</label>
+                        <input type="text" id="cakeMessage" placeholder="e.g., Happy Birthday!" maxlength="25" oninput="updateCake()">
+                    </div>
+
+                    <div class="input-group mt-20">
+                        <label class="label-title">Special Instructions</label>
+                        <textarea id="specialNotes" rows="3" placeholder="Any allergies or specific design requests?"></textarea>
+                    </div>
+
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="nextStep(4)">← Back</button>
+                        <button class="btn btn-primary" onclick="scrollToPreview()">Review Order</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="builder-preview">
+                <div class="sticky-wrapper">
+                    <div class="preview-card">
+                        <h4>Live Preview</h4>
+                        
+                        <div class="cake-visual-container">
+                            <div id="visualCake" class="visual-cake">
+                                <div class="cake-tier tier-2" style="display:none;"></div>
+                                <div class="cake-tier tier-1">
+                                    <div class="cake-msg" id="previewMsg"></div>
+                                </div>
+                                <div class="cake-toppings" id="previewToppings"></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-details">
+                            <div class="summary-row"><span>Shape:</span> <strong id="sumShape">Round</strong></div>
+                            <div class="summary-row"><span>Size:</span> <strong id="sumSize">1 Pound</strong></div>
+                            <div class="summary-row"><span>Flavor:</span> <strong id="sumFlavor">Vanilla</strong></div>
+                            <div class="summary-row"><span>Frosting:</span> <strong id="sumFrosting">Buttercream</strong></div>
+                            <div class="summary-row"><span>Filling:</span> <strong id="sumFilling">Cream</strong></div>
+                            <div class="summary-row"><span>Toppings:</span> <strong id="sumToppings">None</strong></div>
+                        </div>
+
+                        <div class="divider-gold-small" style="width: 100%;"></div>
+                        
+                        <div class="price-display">
+                            <span>Estimated Total:</span>
+                            <span id="totalPrice">Rs 1500</span>
+                        </div>
+
+                        <button class="btn btn-primary checkout-btn" onclick="placeCustomOrder()">
+                            Place Custom Order (WhatsApp)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html"><img src="Novelty-logo.png" class="footer-logo"></a>
+                <p class="mt-20">Where tradition meets modern artistry.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>📍 25-B1, Gulberg 3, Lahore</p>
+                <p>📞 +92 321 622 2247</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 Novelty By Khadija Iqbal.</p></div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="custom-cake.js"></script>
+</body>
+</html>

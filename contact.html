@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Novelty By Khadija Iqbal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-group nav-left">
+            <div class="nav-links-desktop">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="menu.html">Menu</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+        </div>
+
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="Novelty-logo.png" alt="Novelty Logo">
+            </a>
+        </div>
+
+        <div class="nav-group nav-right">
+            <div class="nav-links-desktop">
+                <a href="custom-cake.html">Custom Baking</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            
+            <div class="nav-icons">
+                <button class="icon-btn" onclick="openSearch()" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <a href="cart.html" class="icon-btn" title="View Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-count-badge" class="cart-count" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="custom-cake.html">Custom Baking</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+    </nav>
+
+    <div id="search-overlay" class="search-overlay">
+        <button class="close-search" onclick="closeSearch()">×</button>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search for cakes, brownies..." onkeypress="handleSearch(event)">
+            <p style="color: #bfa056; margin-top: 10px;">Press Enter to Search</p>
+        </div>
+    </div>
+
+    <header class="page-hero" style="background-image: url('menu-hero.jpg');">
+        <div class="page-hero-content">
+            <h1>Contact Us</h1>
+            <div class="divider-gold"></div>
+            <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+        </div>
+    </header>
+
+    <section class="contact-content">
+        <h2 class="cursive-heading">We are your neighborhood bakers!</h2>
+        
+        <div class="info-grid">
+            <div class="info-list">
+                
+                <div class="info-card">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    </div>
+                    <div class="info-details">
+                        <h4>Free Shipping</h4>
+                        <p>On Orders Above <span class="highlight">Rs. 1000</span></p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                    </div>
+                    <div class="info-details">
+                        <h4>Secure Payment</h4>
+                        <p>100% Secure Online Payment</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/923216222247" target="_blank" class="info-card clickable">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div class="info-details">
+                        <h4>WhatsApp Us</h4>
+                        <p class="contact-link">+92 321 622 2247</p>
+                    </div>
+                </a>
+
+                <a href="mailto:info@novelty.pk" class="info-card clickable">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="info-details">
+                        <h4>Send an Email</h4>
+                        <p class="contact-link">info@novelty.pk</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="feedback-section">
+                <div class="image-frame">
+                    <img src="contactpic.jpg" alt="Caramel Cheesecake Slice" class="cake-img">
+                </div>
+                <div class="feedback-content">
+                    <p class="feedback-text">Reach us out for<br><strong>Feedback & Suggestions</strong></p>
+                    <a href="reviews.html" class="feedback-btn">
+                        Send Us Your Feedback
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html">
+                    <img src="Novelty-logo.png" alt="Novelty Logo" class="footer-logo">
+                </a>
+                <p class="mt-20">Where tradition meets modern artistry.</p>
+                <div class="social-icons mt-20">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>📍 25-B1, Gulberg 3, Ghalib Market, Lahore</p>
+                <p>📞 +92 321 622 2247</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Novelty By Khadija Iqbal.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923216222247" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat">
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

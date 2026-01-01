@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Feedback | Novelty By Khadija Iqbal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="reviews.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+
+        <div class="nav-group nav-left">
+            <div class="nav-links-desktop">
+                <a href="about.html">About Us</a>
+                <a href="menu.html">Menu</a>
+                <a href="reviews.html" class="active">Reviews</a>
+            </div>
+        </div>
+
+        <div class="logo-container">
+            <a href="index.html"><img src="Novelty-logo.png" alt="Novelty Logo"></a>
+        </div>
+
+        <div class="nav-group nav-right">
+            <div class="nav-links-desktop">
+                <a href="custom-cake.html">Custom Baking</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <button class="icon-btn" onclick="openSearch()"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+                <a href="cart.html" class="icon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-count-badge" class="cart-count" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="custom-cake.html">Custom Baking</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+    </nav>
+
+    <div id="search-overlay" class="search-overlay">
+        <button class="close-search" onclick="closeSearch()">×</button>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search..." onkeypress="handleSearch(event)">
+        </div>
+    </div>
+
+    <header class="page-hero" style="background-image: url('menu-hero.jpg');">
+        <div class="page-hero-content">
+            <h1>Client Love</h1>
+            <div class="divider-gold"></div>
+            <p class="breadcrumb"><a href="index.html">Home</a> / Reviews</p>
+        </div>
+    </header>
+
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title text-center">What People <span class="text-gold">Say</span></h2>
+            <p class="section-desc text-center">Real feedback from our lovely customers.</p>
+            
+            <div class="masonry-grid" id="reviews-container">
+                
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <div class="stars">★★★★★</div>
+                    <p>"The Knafeh bars are out of this world! Best bakery in Lahore hands down. The crunch and sweetness are perfectly balanced."</p>
+                    <h5>- Ayesha K.</h5>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Ordered a custom cake for my wedding. Not only did it look stunning, it tasted divine. Highly recommended!"</p>
+                    <h5>- Hamza R.</h5>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Premium packaging and authentic taste. Novelty never disappoints! My kids loved the workshop too."</p>
+                    <h5>- Sarah M.</h5>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <div class="stars">★★★★☆</div>
+                    <p>"The Gluten Free Brownies are a lifesaver. Finally found something healthy that tastes delicious."</p>
+                    <h5>- Fatima Z.</h5>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Every bite feels like a piece of art. The attention to detail in your custom baking is unmatched."</p>
+                    <h5>- Zoya H.</h5>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="premium-divider">
+        <span class="divider-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg></span>
+    </div>
+
+    <section class="feedback-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="cursive-heading text-center">Share Your Experience</h2>
+                <form id="feedbackForm" onsubmit="submitReview(event)">
+                    <div class="form-group">
+                        <input type="text" id="reviewerName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="reviewerRating">
+                            <option value="5">★★★★★ (Excellent)</option>
+                            <option value="4">★★★★☆ (Good)</option>
+                            <option value="3">★★★☆☆ (Average)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="reviewerMessage" rows="4" placeholder="Write your review here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html">
+                    <img src="Novelty-logo.png" alt="Novelty Logo" class="footer-logo">
+                </a>
+                <p class="mt-20">Where tradition meets modern artistry.</p>
+                <div class="social-icons mt-20">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>📍 25-B1, Gulberg 3, Ghalib Market, Lahore</p>
+                <p>📞 +92 321 622 2247</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Novelty By Khadija Iqbal.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923216222247" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat">
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

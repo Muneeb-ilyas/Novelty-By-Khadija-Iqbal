@@ -1,0 +1,22 @@
+.cart-section { padding: 80px 0; min-height: 60vh; }
+.cart-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+.cart-table th { background: var(--dark-brown); color: var(--gold); padding: 15px; text-align: left; font-family: 'Playfair Display', serif; letter-spacing: 1px; }
+.cart-table td { padding: 15px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.cart-product-img { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; border: 1px solid var(--gold); }
+.item-name { font-weight: bold; color: var(--primary-brown); }
+.item-detail { font-size: 0.85rem; color: #777; }
+.remove-btn { color: #ff4d4d; cursor: pointer; font-size: 0.9rem; background: none; border: none; font-weight: bold; transition: 0.3s; }
+.remove-btn:hover { text-decoration: underline; }
+.cart-summary { background: #fff8f0; padding: 30px; border-radius: 10px; border: 1px solid var(--gold); max-width: 400px; margin-left: auto; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.total-row { border-top: 2px solid var(--gold); padding-top: 15px; font-weight: bold; font-size: 1.2rem; color: var(--primary-brown); }
+.checkout-btn { width: 100%; display: block; text-align: center; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+.checkout-btn:hover { background: #1ebe57; transform: translateY(-2px); }
+.empty-cart-msg { text-align: center; display: none; margin-top: 50px; }
+.empty-cart-msg a { color: var(--gold); font-weight: bold; text-decoration: none; }
+@media (max-width: 768px) {
+    .cart-table thead { display: none; }
+    .cart-table tr { display: block; margin-bottom: 20px; border: 1px solid #eee; padding: 10px; }
+    .cart-table td { display: flex; justify-content: space-between; align-items: center; text-align: right; padding: 10px 0; }
+    .cart-table td::before { content: attr(data-label); font-weight: bold; color: var(--primary-brown); float: left; }
+}

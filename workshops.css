@@ -1,0 +1,156 @@
+/* --- Workshop Intro Section --- */
+.workshop-intro { 
+    padding: 80px 20px; 
+    background-color: var(--white); 
+}
+
+.intro-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1.2fr 1fr; /* Adjusted layout */
+    gap: 40px; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.intro-img { 
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(59, 35, 31, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease;
+}
+
+.intro-img:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.intro-text { text-align: center; padding: 0 20px; }
+.intro-text p { 
+    font-family: 'Lato', sans-serif; 
+    font-size: 1.05rem; 
+    line-height: 1.8; 
+    color: #555; 
+}
+
+/* --- Kids Session Gallery --- */
+.kids-session-section { 
+    padding: 40px 0 80px; 
+    text-align: center; 
+    background-color: var(--cream-bg);
+}
+
+.kids-heading { 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 400; 
+    font-size: 2.5rem; 
+    color: var(--primary-brown); 
+    margin-bottom: 50px; 
+}
+
+.session-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 0 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.session-item {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(191, 160, 86, 0.3); /* Gold Border */
+}
+
+.session-img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    transition: 0.5s ease; 
+}
+
+.session-item:hover .session-img { 
+    transform: scale(1.1); /* Zoom effect inside frame */
+}
+
+/* --- Interactive CTA Section (FIXED) --- */
+.workshop-cta {
+    height: 60vh; 
+    width: 100%;
+    background: url('images/workshop-bg.jpg') no-repeat center center/cover;
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* Main Box Container */
+.cta-box {
+    background-color: rgba(160, 150, 140, 0.95);
+    padding: 30px 60px; 
+    text-align: center; 
+    color: white;
+    transition: all 0.4s ease;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    border-radius: 5px; 
+    min-width: 380px;
+}
+
+/* Hover effect for the whole box */
+.cta-box:hover {
+    background-color: var(--gold);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.cta-box span { 
+    display: block; 
+    font-family: 'Lato', sans-serif; 
+    font-weight: 300; 
+    font-size: 1.1rem; 
+    margin-bottom: 10px; 
+    letter-spacing: 1px;
+}
+
+/* Specific Link Styling */
+.cta-whatsapp-link {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.cta-whatsapp-link h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0;
+    transition: 0.3s;
+}
+
+/* Link Hover */
+.cta-whatsapp-link:hover {
+    border-bottom-color: white;
+    transform: translateY(-3px);
+}
+
+/* Contrast adjustment: When box is gold, make link dark */
+.cta-box:hover .cta-whatsapp-link {
+    color: var(--primary-brown);
+    border-bottom-color: transparent;
+}
+
+.cta-box:hover .cta-whatsapp-link:hover {
+     border-bottom-color: var(--primary-brown);
+}
+
+/* --- Mobile Queries --- */
+@media (max-width: 900px) { 
+    .intro-grid { grid-template-columns: 1fr; } 
+    .intro-img { height: 300px; }
+    .session-grid { grid-template-columns: repeat(2, 1fr); } 
+}

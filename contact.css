@@ -1,0 +1,183 @@
+/* Contact Page Styling */
+
+/* Hero Section handled by global.css now */
+
+.contact-content {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cursive-heading {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+/* Grid Layout */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Left side slightly wider */
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- Left Side: Info List --- */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--gold); /* Gold accent */
+    transition: all 0.3s ease;
+}
+
+.info-card.clickable {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(59, 35, 31, 0.1);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: #fff8f0; /* Light cream bg for icon */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: var(--primary-brown);
+}
+
+.info-details h4 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary-brown);
+    margin-bottom: 4px;
+}
+
+.info-details p {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.info-details .highlight {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.contact-link {
+    font-weight: bold;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+.info-card:hover .contact-link {
+    color: var(--gold);
+}
+
+/* --- Right Side: Feedback Section --- */
+.feedback-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff8f0; /* Light background container */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(191, 160, 86, 0.2);
+}
+
+.image-frame {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid var(--gold);
+}
+
+.cake-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.feedback-section:hover .cake-img {
+    transform: scale(1.05);
+}
+
+.feedback-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.feedback-text strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-brown);
+}
+
+.feedback-btn {
+    background-color: var(--gold);
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(191, 160, 86, 0.3);
+}
+
+.feedback-btn:hover {
+    background-color: var(--primary-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 35, 31, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .info-list {
+        order: 2; /* Put info below image on mobile if desired, or keep as is */
+    }
+    
+    .cursive-heading {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+}
